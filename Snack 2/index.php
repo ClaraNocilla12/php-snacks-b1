@@ -34,7 +34,7 @@ $age=$_GET['age'];
         <button type="submit">Invia</button>
     </form>
 
-    <?php if(strlen($name)>3 && filter_var($mail, FILTER_VALIDATE_EMAIL) && $age!=isNAN){
+    <?php if(strlen($name)>3 && filter_var($mail, FILTER_VALIDATE_EMAIL) && is_numeric($age) && $age>0){
         echo 'accesso riuscito';
     }else{
         echo 'accesso negato';
